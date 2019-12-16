@@ -28,6 +28,7 @@ class CompaniesController extends Controller
     public function create()
     {
         //
+        return view('companies.create');
     }
 
     /**
@@ -39,6 +40,19 @@ class CompaniesController extends Controller
     public function store(Request $request)
     {
         //
+      
+            $company=Company::create([
+                'name'=>$request->input('name'),
+                'description'=>$request->input('description'),
+                'user_id'=>$request->id
+            ]);
+
+            if($company)
+            {
+                return redirect()->route('companies.show',['company'=>$company->id])
+                ->with('success','company created successfully');
+            }
+            return back()->withInput('error','Error creating new company');
     }
 
     /**

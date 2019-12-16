@@ -100,11 +100,14 @@
         <div class="container">
         @include('partials.errors')
         @include('partials.success')
+        </div> 
+        <div class="container">
         
         <div class="row">
         @yield('content');
         </div>
         </div>
+        
         
     
        
