@@ -3,27 +3,29 @@
 @section('content')
 
     <div class="col-md-9" style="background: grey;color:white;margin:10px;">
-    <h1>Create New Company</h1>
-     <form action="{{route('companies.store')}}" method="post">
+    <h1>Create New Project</h1>
+     <form action="{{route('projects.store')}}" method="post">
      {{ csrf_field() }}
      
      <div class="form-group">
-     <label for="company-name">Name<span class="required">*</spane></label>
+     <label for="project-name">Name<span class="required">*</spane></label>
      <input
      placeholder="Enter name" 
-     id="company-name" 
+     id="project-name" 
      required
      name="name"
      spellcheck="false"
      class="form-control"
      >
-
+     </div>
+     <input type="hidden" name="company_id" value="{{$company_id}}">
+ 
      <div class="form-group">
-     <label for="company-content">Description</label>
+     <label for="project-content">Description</label>
      <textarea placeholder="Enter description"
      style="resize:vertical"
       name="description" 
-      id="company-content" 
+      id="project-content" 
       class="form-control autosize-target text-left"
        rows="5"
        spellcheck="false"
@@ -31,7 +33,7 @@
      </div>
 
      <div class="form-group">
-     <label for="company-name">Name<span class="required">*</spane></label>
+     <label for="project-name">Name<span class="required">*</spane></label>
      <input
      placeholder="Enter user_id" 
      id="id" 
@@ -40,6 +42,7 @@
      spellcheck="false"
      class="form-control"
      >
+     </div>
 
 
       <div class="form-group">
@@ -48,9 +51,5 @@
 
      </form>
     </div>
-
-
-
-
 
 @endsection

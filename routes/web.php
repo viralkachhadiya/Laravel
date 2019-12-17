@@ -11,13 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::resource('companies','CompaniesController');
 Route::resource('projects','ProjectsController');
+Route::get('projects/create/{company_id?}','ProjectsController@create');
 Route::resource('roles','RolesController');
 Route::resource('tasks','TasksController');
 Route::resource('users','UsersController');
+
+// Route::get('/', function () {
+//      return redirect()->route('companies.index');
+// });
+// Route::get('/', function () {
+//     return redirect('/companies');
+// });
+
+Route::get('/','CompaniesController@index');
 
