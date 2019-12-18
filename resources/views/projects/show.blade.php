@@ -14,8 +14,8 @@
         </div>
       </div>
 
-   <div class="row" style="background: grey;color:white;margin:10px;">
-     {{-- @foreach($project->project as $project)
+      <div class="row" style="background: grey;color:white;margin:10px;">
+       {{-- @foreach($project->project as $project)
       
       <!-- Example row of columns -->
     
@@ -24,9 +24,9 @@
           <p>{{$project->description}}</p>
           <p><a class="btn btn-secondary" href="/project/{{$project->id}}" role="button">View details »</a></p>
         </div>
-     @endforeach --}}
-    </div>
-    </div>  
+        @endforeach --}}
+      </div>
+   </div>  
       <!-- /container -->
       <aside class="col-md-3 blog-sidebar">
       <!-- <div class="p-4 mb-3 bg-light rounded">
@@ -78,7 +78,60 @@
       </div> -->
 
     </aside>
-    </div>
+    
+    
+     <div class="col-sm-9 col-md-9 col-lg-9">
+    <form action="{{route('comments.store')}}" method="post">
+     {{ csrf_field() }}
+     
+     <input type="hidden" name="commentable_type" value="Project">
+     <input type="hidden" name="commentable_id" value="{{$project->id}}">
 
-    </main>
-    @endsection
+     
+     <div class="form-group">
+     <label for="comment-content">Comment</label>
+     <textarea placeholder="Enter comment"
+     style="resize:vertical"
+      name="body" 
+      id="comment-content" 
+      class="form-control autosize-target text-left"
+       rows="3"
+       spellcheck="false"
+      ></textarea>
+     </div>
+
+     <div class="form-group">
+     <label for="comment-content">Proof of work done(Url/Photoes)</label>
+     <textarea placeholder="Enter url or screenshots"
+     style="resize:vertical"
+      name="url" 
+      id="comment-content" 
+      class="form-control autosize-target text-left"
+       rows="2"
+       spellcheck="false"
+      ></textarea>
+     </div>
+
+     <div class="form-group">
+     <label for="company-name">Name<span class="required">*</spane></label>
+     <input
+     placeholder="Enter user_id" 
+     id="id" 
+     required
+     name="id"
+     spellcheck="false"
+     class="form-control"
+     >
+     </div>
+
+     
+
+     <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
+
+         </form>
+          </div>
+   </div>
+  </main>
+  @endsection

@@ -15,8 +15,8 @@ class Comment extends Model
         'user_id',
     ];
 
-    public function user()
+    public function commentable()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->morphTo();
     }
 }

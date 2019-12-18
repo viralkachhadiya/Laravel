@@ -22,15 +22,7 @@
             }
 
     
-            #cover{
-                align-items:center;
-                display:flex;
-                height:100%;
-            }
-            #cover-caption{
-	          width: 100%;
-             }
-
+           
         </style>
     </head> 
     <body>
@@ -46,23 +38,21 @@
       <a class="nav-item nav-link" href="{{route('companies.index')}}">My Company <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="{{route('projects.index')}}">Project</a>
       <a class="nav-item nav-link" href="#">Task</a>
-      <a class="nav-item nav-link" href="#">Comment</a>
     </div>
   </div>
 </nav>
         
+        <br>
         <div class="container">
         @include('partials.errors')
         @include('partials.success')
         </div> 
 
-        <section id="cover">
-        <div id="cover-caption">
+        
         <div class="container">
         @yield('content');
         </div>
-        </div>
-        </section>
+       
         
         
     

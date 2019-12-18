@@ -19,6 +19,7 @@ Route::get('projects/create/{company_id?}','ProjectsController@create');
 Route::resource('roles','RolesController');
 Route::resource('tasks','TasksController');
 Route::resource('users','UsersController');
+Route::resource('comments','CommentsController');
 
 // Route::get('/', function () {
 //      return redirect()->route('companies.index');

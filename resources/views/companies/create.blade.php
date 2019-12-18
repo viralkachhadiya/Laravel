@@ -17,7 +17,7 @@
      spellcheck="false"
      class="form-control"
      >
-
+    </div>
      <div class="form-group">
      <label for="company-content">Description</label>
      <textarea placeholder="Enter description"
@@ -40,6 +40,7 @@
      spellcheck="false"
      class="form-control"
      >
+     </div>
 
 
       <div class="form-group">
