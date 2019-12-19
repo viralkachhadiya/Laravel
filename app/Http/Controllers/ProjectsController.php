@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Company;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
@@ -28,7 +29,12 @@ class ProjectsController extends Controller
     public function create($company_id = null)
     {
         //
-        return view('projects.create',['company_id'=>$company_id]);
+        $companies=null;
+        if(!$company_id)
+        {
+            $companies=Company::all();
+        }
+        return view('projects.create',['company_id'=>$company_id,'companies'=>$companies]);
     }
 
     /**

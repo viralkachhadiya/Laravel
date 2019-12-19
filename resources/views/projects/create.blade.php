@@ -18,8 +18,27 @@
      class="form-control"
      >
      </div>
+     
+     @if($companies == null)
      <input type="hidden" name="company_id" value="{{$company_id}}">
+     @endif
+
+     
+     @if($companies != null)
+   
+     <div class="form-group">
+     <label for="company-content">Select company</label>
  
+       <select name="company_id" class="form-control">
+       @foreach($companies as $company)
+       <option value="{{$company->id}}">{{$company->name}}</option>
+       @endforeach
+       </select>
+
+     </div>
+ 
+     @endif
+
      <div class="form-group">
      <label for="project-content">Description</label>
      <textarea placeholder="Enter description"
@@ -33,7 +52,7 @@
      </div>
 
      <div class="form-group">
-     <label for="project-name">Name<span class="required">*</spane></label>
+     <label for="project-name">User_id<span class="required">*</spane></label>
      <input
      placeholder="Enter user_id" 
      id="id" 
